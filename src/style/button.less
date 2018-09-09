@@ -1,0 +1,59 @@
+@import "./common/color.less";
+@import "./common/size.less";
+
+.btn{
+	padding: 0.5em 1em;
+	border-radius: 0.2em;
+	cursor: pointer;
+	transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-default{
+	background-color: @color-default;
+	border: 1px solid @color-gray;
+	color: @color-black;
+}
+.btn-default:hover{
+	border-color: @color-light-blue;
+	color: @color-light-blue;
+}
+.btn-success{
+	background-color: @color-success;
+	border: 1px solid @color-success;
+	color: @color-white;
+}
+.btn-success:hover{
+	border-color: @color-success-hover;
+	background-color: @color-success-hover;
+}
+.btn-warning{
+	background-color: @color-warning;
+	border: 1px solid @color-warning;
+	color: @color-white;
+}
+.btn-warning:hover{
+	border-color: @color-warning-hover;
+	background-color: @color-warning-hover;
+}
+.btn-error{
+	background-color: @color-error;
+	border: 1px solid @color-error;
+	color: @color-white;
+}
+.btn-error:hover{
+	border-color: @color-error-hover;
+	background-color: @color-error-hover;
+}
+
+.btn-small{
+	font-size: @fontsize-small;
+}
+
+.btn-medium{
+	font-size: @fontsize-medium;
+}
+
+.btn-large{
+	font-size: @fontsize-large;
+}
+
