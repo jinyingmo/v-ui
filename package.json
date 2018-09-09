@@ -1,0 +1,25 @@
+{
+  "name": "jym-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jym94",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.0"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "less": "^3.8.1",
+    "parcel-bundler": "^1.9.7",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "keywords": [],
+  "description": "",
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
+  }
+}
