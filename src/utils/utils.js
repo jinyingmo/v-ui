@@ -7,5 +7,5 @@ export function isSize(value) {
 }
 
 export function isIcon(value) {
-	return ['', 'search', 'undo', 'small'].indexOf(value) !== -1
+	return ['', 'search', 'undo', 'tags', 'stop'].indexOf(value) !== -1
 }

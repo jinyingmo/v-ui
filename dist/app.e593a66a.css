@@ -1,17 +1,32 @@
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .btn {
+  text-align: center;
   padding: 0.5em 1em;
   border-radius: 0.2em;
   cursor: pointer;
+  outline: none;
+  position: relative;
   transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 .btn-default {
-  background-color: #fff;
-  border: 1px solid #dcdee2;
-  color: #000;
+  background-color: #2db7f5;
+  border: 1px solid #2db7f5;
+  color: #fff;
 }
 .btn-default:hover {
-  border-color: #3bb4f2;
-  color: #3bb4f2;
+  border-color: #57c5f7;
+  background-color: #57c5f7;
+}
+.btn-default:active {
+  background-color: #2baee9;
+  border-color: #2baee9;
 }
 .btn-success {
   background-color: #19be6b;
@@ -22,6 +37,10 @@
   border-color: #47cb89;
   background-color: #47cb89;
 }
+.btn-success:active {
+  background-color: #18b566;
+  border-color: #18b566;
+}
 .btn-warning {
   background-color: #ff9900;
   border: 1px solid #ff9900;
@@ -30,6 +49,10 @@
 .btn-warning:hover {
   border-color: #ffad33;
   background-color: #ffad33;
+}
+.btn-warning:active {
+  background-color: #f29100;
+  border-color: #f29100;
 }
 .btn-error {
   background-color: #ed4014;
@@ -40,6 +63,15 @@
   border-color: #f16643;
   background-color: #f16643;
 }
+.btn-error:active {
+  background-color: #e13d13;
+  border-color: #e13d13;
+}
+.btn[disabled] {
+  border-color: #dcdee2;
+  color: #dcdee2;
+  background-color: #f7f7f7;
+}
 .btn-small {
   font-size: 12px;
 }
@@ -48,4 +80,37 @@
 }
 .btn-large {
   font-size: 16px;
+}
+.btn-icon {
+  display: inline-block;
+  float: left;
+  margin-right: 0.5em;
+  width: 0.9em;
+  height: 0.9em;
+}
+.btn-text {
+  display: inline-block;
+  line-height: 0.9em;
+  float: left;
+}
+.btn-icon-loading {
+  background: url(loading.31039173.png) no-repeat;
+  background-size: contain;
+  animation: rotating 1.5s 0s linear infinite;
+}
+.btn-icon-search {
+  background: url("search.6f931919.png") no-repeat;
+  background-size: contain;
+}
+.btn-icon-undo {
+  background: url("undo.0a0c8819.png") no-repeat;
+  background-size: contain;
+}
+.btn-icon-tags {
+  background: url("tags.20f665e5.png") no-repeat;
+  background-size: contain;
+}
+.btn-icon-stop {
+  background: url("stop.f3ad6c5a.png") no-repeat;
+  background-size: contain;
 }

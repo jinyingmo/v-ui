@@ -10007,8 +10007,18 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.isType = isType;
+exports.isSize = isSize;
+exports.isIcon = isIcon;
 function isType(value) {
 	return ['default', 'success', 'warning', 'error'].indexOf(value) !== -1;
+}
+
+function isSize(value) {
+	return ['large', 'medium', 'small'].indexOf(value) !== -1;
+}
+
+function isIcon(value) {
+	return ['', 'search', 'undo', 'tags', 'stop'].indexOf(value) !== -1;
 }
 },{}],"..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
@@ -10334,15 +10344,51 @@ exports.default = {
                 return (0, _utils.isType)(value);
             },
             default: 'default'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        icon: {
+            validator: function validator(value) {
+                return (0, _utils.isIcon)(value);
+            },
+            default: ''
+        },
+        size: {
+            validator: function validator(value) {
+                return (0, _utils.isSize)(value);
+            },
+            default: 'medium'
+        },
+        loading: {
+            type: Boolean,
+            default: false
         }
     },
-    methods: {},
+    methods: {
+        handleClick: function handleClick(e) {
+            if (this.loading) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
+            this.$emit('click', event);
+        }
+    },
     computed: {
         btn_classes: function btn_classes() {
-            return ['btn', 'btn-' + this.type];
+            return ['btn', 'btn-' + this.type, 'btn-' + this.size];
+        },
+        icons: function icons() {
+            return ['btn-icon', this.loading ? 'btn-icon-loading' : 'btn-icon-' + this.icon];
         }
     }
 }; //
+//
+//
+//
+//
 //
 //
         var $4a7665 = exports.default || module.exports;
@@ -10357,7 +10403,25 @@ exports.default = {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { class: _vm.btn_classes }, [_vm._t("default")], 2)
+  return _c(
+    "button",
+    {
+      class: _vm.btn_classes,
+      attrs: { disabled: _vm.disabled },
+      on: { click: _vm.handleClick }
+    },
+    [
+      _vm.loading || _vm.icon != "" ? _c("i", { class: _vm.icons }) : _vm._e(),
+      _vm._v(" "),
+      !_vm.loading
+        ? _c("span", { staticClass: "btn-text" }, [_vm._t("default")], 2)
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.loading
+        ? _c("span", { staticClass: "btn-text" }, [_vm._v("loading...")])
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -10392,7 +10456,7 @@ render._withStripped = true
       
       }
     })();
-},{"../utils/utils":"src\\utils\\utils.js","_css_loader":"..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\css-loader.js","vue-hot-reload-api":"node_modules\\vue-hot-reload-api\\dist\\index.js","vue":"node_modules\\vue\\dist\\vue.common.js"}],"src\\app.js":[function(require,module,exports) {
+},{"../utils/utils":"src\\utils\\utils.js","./..\\images\\loading.png":[["loading.31039173.png","src\\images\\loading.png"],"src\\images\\loading.png"],"./..\\images\\search.png":[["search.6f931919.png","src\\images\\search.png"],"src\\images\\search.png"],"./..\\images\\undo.png":[["undo.0a0c8819.png","src\\images\\undo.png"],"src\\images\\undo.png"],"./..\\images\\tags.png":[["tags.20f665e5.png","src\\images\\tags.png"],"src\\images\\tags.png"],"./..\\images\\stop.png":[["stop.f3ad6c5a.png","src\\images\\stop.png"],"src\\images\\stop.png"],"_css_loader":"..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\css-loader.js","vue-hot-reload-api":"node_modules\\vue-hot-reload-api\\dist\\index.js","vue":"node_modules\\vue\\dist\\vue.common.js"}],"src\\app.js":[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -10441,7 +10505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50484' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62552' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

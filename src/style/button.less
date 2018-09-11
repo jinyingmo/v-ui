@@ -7,63 +7,45 @@
 	padding: 0.5em 1em;
 	border-radius: 0.2em;
 	cursor: pointer;
+	outline:none;
+	position: relative;
 	transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-default{
-	background-color: @color-default;
-	border: 1px solid @color-default;
-	color: @color-white;
+.btn-styles(@name, @color, @color-hover, @color-active) {
+	.btn-@{name} {
+		background-color: @color;
+ 		border: 1px solid @color;
+ 		color: @color-white;
+	}
+	.btn-@{name}:hover {
+	 	border-color: @color-hover;
+	 	background-color: @color-hover;
+	}
+	.btn-@{name}:active {
+	 	background-color: @color-active;
+    	border-color: @color-active;
+	}
 }
-.btn-default:hover{
-	border-color: @color-default-hover;
-	background-color: @color-default-hover;
-}
-.btn-success{
-	background-color: @color-success;
-	border: 1px solid @color-success;
-	color: @color-white;
-}
-.btn-success:hover{
-	border-color: @color-success-hover;
-	background-color: @color-success-hover;
-}
-.btn-warning{
-	background-color: @color-warning;
-	border: 1px solid @color-warning;
-	color: @color-white;
-}
-.btn-warning:hover{
-	border-color: @color-warning-hover;
-	background-color: @color-warning-hover;
-}
-.btn-error{
-	background-color: @color-error;
-	border: 1px solid @color-error;
-	color: @color-white;
-}
-.btn-error:hover{
-	border-color: @color-error-hover;
-	background-color: @color-error-hover;
-}
+.btn-styles(default, @color-default, @color-default-hover, @color-default-active);
+.btn-styles(success, @color-success, @color-success-hover, @color-success-active);
+.btn-styles(warning, @color-warning, @color-warning-hover, @color-warning-active);
+.btn-styles(error, @color-error, @color-error-hover, @color-error-active);
 
-.btn[disabled]{
+.btn[disabled] {
 	border-color: #dcdee2;
 	color: #dcdee2;
 	background-color: #f7f7f7;
 }
 
-.btn-small{
-	font-size: @fontsize-small;
+.btn-sizes(@name, @size) {
+	.btn-@{name} {
+		font-size: @size;
+	}
 }
-
-.btn-medium{
-	font-size: @fontsize-medium;
-}
-
-.btn-large{
-	font-size: @fontsize-large;
-}
+.btn-sizes(small, @fontsize-small);
+.btn-sizes(medium, @fontsize-medium);
+.btn-sizes(large, @fontsize-large);
 
 .btn-icon{
 	display: inline-block;
@@ -85,12 +67,15 @@
 	background-size: contain;
     animation: rotating 1.5s 0s linear infinite;
 }
-.btn-icon-search{
-	background: url(../images/search.png) no-repeat;
-	background-size: contain;
+
+.btn-icons(@name) {
+	.btn-icon-@{name} {
+		background: url("../images/@{name}.png") no-repeat;
+		background-size: contain;
+	}
 }
-.btn-icon-undo{
-	background: url(../images/undo.png) no-repeat;
-	background-size: contain;
-}
+.btn-icons(search);
+.btn-icons(undo);
+.btn-icons(tags);
+.btn-icons(stop);
 
