@@ -1,0 +1,90 @@
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btn {
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.btn-default {
+  background-color: #2db7f5;
+  border: 1px solid #2db7f5;
+  color: #fff;
+}
+.btn-default:hover {
+  border-color: #57c5f7;
+  background-color: #57c5f7;
+}
+.btn-success {
+  background-color: #19be6b;
+  border: 1px solid #19be6b;
+  color: #fff;
+}
+.btn-success:hover {
+  border-color: #47cb89;
+  background-color: #47cb89;
+}
+.btn-warning {
+  background-color: #ff9900;
+  border: 1px solid #ff9900;
+  color: #fff;
+}
+.btn-warning:hover {
+  border-color: #ffad33;
+  background-color: #ffad33;
+}
+.btn-error {
+  background-color: #ed4014;
+  border: 1px solid #ed4014;
+  color: #fff;
+}
+.btn-error:hover {
+  border-color: #f16643;
+  background-color: #f16643;
+}
+.btn[disabled] {
+  border-color: #dcdee2;
+  color: #dcdee2;
+  background-color: #f7f7f7;
+}
+.btn-small {
+  font-size: 12px;
+}
+.btn-medium {
+  font-size: 14px;
+}
+.btn-large {
+  font-size: 16px;
+}
+.btn-icon {
+  display: inline-block;
+  float: left;
+  margin-right: 0.5em;
+  width: 0.9em;
+  height: 0.9em;
+}
+.btn-text {
+  display: inline-block;
+  line-height: 0.9em;
+  float: left;
+}
+.btn-icon-loading {
+  background: url(loading.b1ce7fdb.png) no-repeat;
+  background-size: contain;
+  animation: rotating 1.5s 0s linear infinite;
+}
+.btn-icon-search {
+  background: url(search.dc0720f8.png) no-repeat;
+  background-size: contain;
+}
+.btn-icon-undo {
+  background: url(undo.75b62843.png) no-repeat;
+  background-size: contain;
+}

@@ -1,7 +1,9 @@
 @import "./common/color.less";
 @import "./common/size.less";
+@import "./common/rotate.less";
 
 .btn{
+	text-align: center;
 	padding: 0.5em 1em;
 	border-radius: 0.2em;
 	cursor: pointer;
@@ -10,12 +12,12 @@
 
 .btn-default{
 	background-color: @color-default;
-	border: 1px solid @color-gray;
-	color: @color-black;
+	border: 1px solid @color-default;
+	color: @color-white;
 }
 .btn-default:hover{
-	border-color: @color-light-blue;
-	color: @color-light-blue;
+	border-color: @color-default-hover;
+	background-color: @color-default-hover;
 }
 .btn-success{
 	background-color: @color-success;
@@ -45,6 +47,12 @@
 	background-color: @color-error-hover;
 }
 
+.btn[disabled]{
+	border-color: #dcdee2;
+	color: #dcdee2;
+	background-color: #f7f7f7;
+}
+
 .btn-small{
 	font-size: @fontsize-small;
 }
@@ -55,5 +63,34 @@
 
 .btn-large{
 	font-size: @fontsize-large;
+}
+
+.btn-icon{
+	display: inline-block;
+	float: left;
+	margin-right: 0.5em;
+	width: 0.9em;
+	height: 0.9em;
+}
+
+.btn-text{
+	display: inline-block;
+	line-height: 0.9em;
+	float: left;
+}
+
+//icon
+.btn-icon-loading{
+	background: url(../images/loading.png) no-repeat;
+	background-size: contain;
+    animation: rotating 1.5s 0s linear infinite;
+}
+.btn-icon-search{
+	background: url(../images/search.png) no-repeat;
+	background-size: contain;
+}
+.btn-icon-undo{
+	background: url(../images/undo.png) no-repeat;
+	background-size: contain;
 }
 
